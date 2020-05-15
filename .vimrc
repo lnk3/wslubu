@@ -30,6 +30,7 @@ set hls is
 set smartcase		    " Enable smart-case search
 set ignorecase		    " Always case-insensitive
 set incsearch		    " Searches for strings incrementally
+:hi Search ctermbg=3 ctermfg=8
 
 "----Indentation---->
 set autoindent		    " Auto-indent new lines
