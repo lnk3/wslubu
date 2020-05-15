@@ -1,0 +1,14 @@
+.bash_history
+.bash_logout
+.cache/
+.landscape/
+.lesshst
+.local/
+.motd_shown
+.profile
+.ssh/
+.sudo_as_admin_successful
+.viminfo
+.vscode-server/
+.vim/
+.gitconfig
