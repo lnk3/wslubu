@@ -1,19 +1,25 @@
 #!/bin/sh
 
 alias \
-	  vc='vim ~/.vimrc' \
-	  l='ls -la' \
-	  neo="neofetch \
+    vc='vim ~/.vimrc' \
+    l='ls -la' \
+    neo="neofetch \
 	  --block_range 1 8 \
-	  --line_wrap off \
-	  --bold off \
-	  --uptime_shorthand on \
-	  --gtk_shorthand on \
-	  --colors 4 1 8 8 8 7 " \
-	  user='cd /mnt/c/Users/lukel'
+	      --line_wrap off \
+		  --bold off \
+		      --uptime_shorthand on \
+			  --gtk_shorthand on \
+			      --colors 4 1 8 8 8 7 " \
+    user='cd /mnt/c/Users/lukel'
 # colorize commands
 alias \
-	  ls="ls -hN --color=auto --group-directories-first" \
-	  grep="grep --color=auto" \
-	  diff="diff --color=auto" \
-	  ccat="highlight --out-format=ansi"
+    ls="ls -hN --color=auto --group-directories-first"
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# Copy to Windows Clipboard
+clip() {
+   cat "$1" | clip.exe 
+}
+
