@@ -10,16 +10,33 @@ alias \
 		      --uptime_shorthand on \
 			  --gtk_shorthand on \
 			      --colors 4 1 8 8 8 7 " \
-    user='cd /mnt/c/Users/lukel'
-# colorize commands
+
+
+#-------------------colorize commands
 alias \
     ls="ls -hN --color=auto --group-directories-first"
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
 
-# Copy to Windows Clipboard
+#-------------------Copy to Windows Clipboard
 clip() {
    cat "$1" | clip.exe 
 }
 
+
+
+
+#-------------------Percorsi
+#RANGER
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+#Onedrive
+alias onedrive='cd  /mnt/c/Users/lukel/OneDrive'
+
+#Onedrive Poli
+alias poli='cd  "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano"/'
+alias anno2='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/2. Secondo anno/Materie/Primo Semestre"/'
+alias anno1='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/1. Primo anno/Materie"/'
+
+user='cd /mnt/c/Users/lukel'
