@@ -11,6 +11,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'       " GIT status along lines
     Plug 'lervag/vimtex'		" Latex syntax highlighting
     Plug 'sirver/ultisnips'		" Snippets
+    Plug 'KeitaNakamura/tex-conceal.vim'
+    Plug 'dylanaraps/wal'		" pywal color
 call plug#end()
 
 "Powerline"
@@ -72,7 +74,8 @@ color default
 hi comment term=bold ctermfg=4 guifg=#406090		"Comments are blue"
 hi LineNr term=underline ctermfg=3 guifg=Red3		"Color for line number"
 hi Statement cterm=none ctermfg=yellow			"Color of statements"
-
+colorscheme wal
+set background=dark
 
 
 "===========================LATEX=========================
@@ -81,7 +84,11 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1		"Latex code is made invisible when cursor not on line
 let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
 
+setlocal spell
+set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 "===========================SNIPPETS=========================
 let g:UltiSnipsExpandTrigger = '<tab>'

@@ -12,3 +12,11 @@
 .vscode-server/
 .vim/
 .gitconfig
+.fzf.bash
+.wget-hsts
+.vs-liveshare-keychain
+.swp
+.selected_editor
+.python_history
+.rangerdir
+.mono/
