@@ -51,7 +51,7 @@ set smarttab                " Enable smart-tabs
 set tabstop=8			"Set for C Programming"
 set softtabstop=4           " Number of spaces per Tab
 set backspace=indent,eol,start
-set colorcolumn=110
+"set colorcolumn=110
 
 set autoread
 set wildmenu
@@ -89,6 +89,12 @@ hi Conceal ctermbg=none
 setlocal spell
 set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+function! Synctex()
+    " remove 'silent' for debugging
+    execute "silent !zathura --synctex-forward" . line('.') . ":" . col('.') . ":" . bufname(%) . " " .g:syncpdf
+endfunction
+map <C-enter> :call Synctex()<cr>
 
 "===========================SNIPPETS=========================
 let g:UltiSnipsExpandTrigger = '<tab>'
