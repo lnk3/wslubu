@@ -1,3 +1,6 @@
+# COLORS
+wal -e -q --theme base16-nord
+
 # Prompt
 
 PS1="\[\033[38;5;49m\][\w]\n\[\033[38;5;39m\]--> \[$(tput sgr0)\]"
@@ -33,8 +36,6 @@ set -o vi
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 [ -f "$HOME/.config/env" ] && source "$HOME/.config/env"
 
-# COLORS
-wal -e -q --theme base16-nord
-
 export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
+#export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 
