@@ -36,4 +36,5 @@ set -o vi
 # COLORS
 wal -e -q --theme base16-nord
 
-export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf` :0.0
+export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
+
