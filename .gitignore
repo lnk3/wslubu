@@ -20,3 +20,11 @@
 .python_history
 .rangerdir
 .mono/
+bin/
+Materie/
+.dbus/
+.config/htop/
+
+.miktex/
+.config/wslu/
+.fzf/
