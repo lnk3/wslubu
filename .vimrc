@@ -13,6 +13,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'sirver/ultisnips'		" Snippets
     Plug 'KeitaNakamura/tex-conceal.vim'
     Plug 'dylanaraps/wal'		" pywal color
+    Plug 'jreybert/vimagit'		" git in vim
+    Plug 'ajh17/VimCompletesMe'
 call plug#end()
 
 "Powerline"
@@ -33,7 +35,7 @@ syntax on
 
 set number relativenumber   " Show line numbers
 set linebreak               " Break lines at word (requires Wrap lines)
-set showbreak=+++           " Wrap-broken line prefix
+set showbreak=-->           " Wrap-broken line prefix
 set textwidth=100           " Line wrap (number of cols)
 set showmatch               " Highlight matching brace
 
@@ -51,14 +53,19 @@ set smarttab                " Enable smart-tabs
 set tabstop=8			"Set for C Programming"
 set softtabstop=4           " Number of spaces per Tab
 set backspace=indent,eol,start
+set wildmode=longest,list,full	"Autocompletion
+set splitbelow splitright   " Splitting corrected
+
+"Disable autocommenting on new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "set colorcolumn=110
 
 set autoread
 set wildmenu
 
 "===========================KEYBINDING=========================
-map <C-g> :Goyo<CR>
-map <C-h> :Goyo 120<CR>
+map <C-f> :Goyo \| set linebreak<CR>
+map <C-F> :Goyo 120<CR>
 
 
 map <Up>    :resize +2<CR>
@@ -66,14 +73,29 @@ map <Down>  :resize -2<CR>
 map <Right> :vertical resize +2<CR>
 map <Left>  :vertical resize -2<CR>
 
+"Navigate between splits
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
+" Compile document script
+map <leader>c :w! \| !compiler <c-r>%<CR><CR>
+
+" Oper corresponding .pdf/.html file
+map <leader>p :!opout <c-r>%<CR><CR>
 
 
 "===========================COLORS=========================
 color default
-hi comment term=bold ctermfg=4 guifg=#406090		"Comments are blue"
-hi LineNr term=underline ctermfg=3 guifg=Red3		"Color for line number"
-hi Statement cterm=none ctermfg=yellow			"Color of statements"
+"Comments are blue
+hi comment term=bold ctermfg=4 guifg=#406090		
+"Color for line number
+hi LineNr term=underline ctermfg=3 guifg=Red3		
+"Color of statements
+hi Statement cterm=none ctermfg=yellow			
+
+"Pywal
 colorscheme wal
 set background=dark
 
@@ -81,20 +103,22 @@ set background=dark
 "===========================LATEX=========================
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_quickfix_mode=0
 set conceallevel=1		"Latex code is made invisible when cursor not on line
 let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
 
-"setlocal spell
-"set spelllang=en_us
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
 function! Synctex()
     " remove 'silent' for debugging
     execute "silent !zathura --synctex-forward" . line('.') . ":" . col('.') . ":" . bufname(%) . " " .g:syncpdf
 endfunction
-map <C-enter> :call Synctex()<cr>
+
+map <C-Enter> :call Synctex()<CR> 
+" Clear latex build files when closing .tex file
+autocmd VimLeave *.tex !VimtexClean %
 
 "===========================SNIPPETS=========================
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -102,3 +126,10 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit="vertical"
 
+"===========================VIMCOMPLETESME=========================
+augroup VimCompletesMeTex
+    autocmd!
+    autocmd FileType tex
+	\ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
+augroup END
+let g:UltiSnipsExpandTrigger = '<tab>'

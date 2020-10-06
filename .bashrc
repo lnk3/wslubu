@@ -38,10 +38,10 @@ set -o vi
 wal -e -q --theme base16-nord
 
 
-#export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
+export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 #export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-export LIBGL_ALWAYS_INDIRECT=1
-
+#export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+#export LIBGL_ALWAYS_INDIRECT=1
+#export DISPLAY=:0.0
 export PATH="/home/surfaceluca/.local/bin:$PATH"
 

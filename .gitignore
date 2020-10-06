@@ -29,3 +29,6 @@ Materie/
 .config/wslu/
 .fzf/
 .config/.tmux/plugins/
+.config/.nvim
+doc/
+.config/nvim/
