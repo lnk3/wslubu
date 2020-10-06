@@ -86,8 +86,8 @@ set conceallevel=1		"Latex code is made invisible when cursor not on line
 let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
 
-setlocal spell
-set spelllang=en_us
+"setlocal spell
+"set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 function! Synctex()
