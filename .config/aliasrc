@@ -38,5 +38,7 @@ alias onedrive='cd  /mnt/c/Users/lukel/OneDrive'
 alias poli='cd  "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano"/'
 alias anno2='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/2. Secondo anno/Materie/Primo Semestre"/'
 alias anno1='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/1. Primo anno/Materie"/'
+alias fisica='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/2.
+Secondo anno/Materie/Primo Semestre/Fisica Tecnica E Macchine [Andrea Baricci]"/'
 
 user='cd /mnt/c/Users/lukel'
