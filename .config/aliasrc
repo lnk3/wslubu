@@ -35,7 +35,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias onedrive='cd  /mnt/c/Users/lukel/OneDrive'
 
 #Onedrive Poli
-alias poli='cd  "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano"/'
+alias poli='cd  "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/university"/'
 alias anno2='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/2. Secondo anno/Materie/Primo Semestre"/'
 alias anno1='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/1. Primo anno/Materie"/'
 alias fisica='cd "/mnt/c/Users/lukel/OneDrive - Politecnico di Milano/Politecnico di Milano/2.

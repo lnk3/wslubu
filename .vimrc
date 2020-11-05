@@ -82,7 +82,7 @@ map <C-l> <C-w>l
 " Compile document script
 map <leader>c :w! \| !compiler <c-r>%<CR><CR>
 
-" Oper corresponding .pdf/.html file
+" Open corresponding .pdf/.html file
 map <leader>p :!opout <c-r>%<CR><CR>
 
 
